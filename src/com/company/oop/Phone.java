@@ -35,5 +35,22 @@ public class Phone {
             System.out.println("You currently do not have any contacts in your phone, " + this.name);
         }
     }
+    public boolean checkContact(String contactName) {
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getName().equals(contactName)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+    public void removeContact(Contact contact) {
+        if (checkContact(contact.getName())) {
+            this.contacts.remove(contact);
+        }
+    }
+    public ArrayList<Contact> getContacts() {
+        return this.contacts;
+    }
 
 }

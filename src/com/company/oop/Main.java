@@ -28,9 +28,20 @@ public class Main {
                 case 3:
                     System.out.print("Enter a new name of contact: ");
                     String name = scanner.next();
-                    System.out.print("Enter the phone number of " + name);
+                    System.out.print("Enter the phone number of " + name + ": ");
                     int phoneNumber = scanner.nextInt();
                     mobilePhone.addContact(name, phoneNumber);
+                    printInstructions();
+                    break;
+                case 4:
+                    System.out.println("About phone: ");
+                    System.out.println(mobilePhone.getPhoneDetails());
+                    break;
+                    //Still working on case 5
+                case 5:
+                    System.out.println("Enter contact name to remove: ");
+                    String contactName = scanner.next();
+//                    mobilePhone.getContacts().remove(Contact());
 
 
             }
@@ -40,14 +51,17 @@ public class Main {
     private static void printInstructions() {
         System.out.println("Enter code to continue: \n" +
                 "0: Quit Application \n" +
-                "1: View all Contacts \n" +
-                "2: Add new contact \n" +
-                "3: Remove contact \n" +
-                "4: Quit Application \n" +
+                "1: Print Instructions \n" +
+                "2: Show all contacts \n" +
+                "3: Add new contact \n" +
+                "4: update an existing contact \n" +
                 "5: Quit Application \n" +
                 "6: Quit Application \n"
 
         );
+    }
+    private static void removeContact() {
+
     }
 
 }

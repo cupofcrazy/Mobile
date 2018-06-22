@@ -9,6 +9,7 @@ public class Main {
         Phone mobilePhone = new Phone("Donald Trump", 01234567);
         boolean quit = false;
         printInstructions();
+
         while (!quit) {
 
             Scanner scanner = new Scanner(System.in);

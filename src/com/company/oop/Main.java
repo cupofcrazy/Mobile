@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
         Phone mobilePhone = new Phone("Donald Trump", 01234567);
         boolean quit = false;
         printInstructions();
@@ -42,7 +42,11 @@ public class Main {
                 case 5:
                     System.out.println("Enter contact name to remove: ");
                     String contactName = scanner.next();
-//                    mobilePhone.getContacts().remove(Contact());
+                    Contact contact = mobilePhone.checkContact(contactName);
+                    mobilePhone.removeContact(contact);
+                    break;
+
+
 
 
             }
@@ -50,18 +54,19 @@ public class Main {
 
     }
     private static void printInstructions() {
-        System.out.println("Enter code to continue: \n" +
-                "0: Quit Application \n" +
-                "1: Print Instructions \n" +
-                "2: Show all contacts \n" +
-                "3: Add new contact \n" +
-                "4: update an existing contact \n" +
-                "5: Quit Application \n" +
-                "6: Quit Application \n"
+        System.out.print(
+                "\t0: Quit Application \n" +
+                "\t1: Print Instructions \n" +
+                "\t2: Show all contacts \n" +
+                "\t3: Add new contact \n" +
+                "\t4: Check phone info \n" +
+                "\t5: Remove contact \n" +
+                "\t6: Quit Application \n" +
+                "Enter code to continue: "
 
         );
     }
-    private static void removeContact() {
+    private static void removeContact(String contactName) {
 
     }
 

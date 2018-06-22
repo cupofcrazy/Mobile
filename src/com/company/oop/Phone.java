@@ -44,20 +44,30 @@ public class Phone {
             System.out.println("You currently do not have any contacts in your phone, " + this.name);
         }
     }
-    public boolean checkContact(String contactName) {
+    public Contact checkContact(String contactName) {
         for (int i = 0; i < contacts.size(); i++) {
-            if (contacts.get(i).getName().equals(contactName)) {
-                return true;
+            Contact contact = contacts.get(i);
+            if (contact.getName().equals(contactName) || contact.getName().toLowerCase().equals(contactName)) {
+                return contact;
             }
         }
-        return false;
-
+        return null;
     }
     // Remove a contact
     public void removeContact(Contact contact) {
-        if (checkContact(contact.getName())) {
-            this.contacts.remove(contact);
+        if (contact == null) {
+            System.out.println("The contact you entered does not exist.");
         }
+        else {
+            System.out.println("Removing contact: " + contact.getName());
+            this.contacts.remove(contact);
+            System.out.println("Contact has been successfully removed.");
+            if (this.contacts.size() <= 0) {
+                System.out.println("Your contact list is empty.");
+            }
+
+        }
+
     }
     public ArrayList<Contact> getContacts() {
         return this.contacts;
